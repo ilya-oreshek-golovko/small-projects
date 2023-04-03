@@ -1,0 +1,102 @@
+:root{
+	font-size: 14px;
+	box-sizing: border-box;
+	--back-color: #d2d4d3;
+	--padding-top: 2em;
+	--padding-bottom: 3em;
+	--padding-left: 3em;
+	--btn-padding-top: .4em;
+	--btn-padding-left: 1em;
+	--font-color: #e6e6eb;
+	--btn-back: #3f3f47;
+	--option-right: #7cd67c;
+	--option-error: #c4101f;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: inherit;
+	font-family: "Popins", sans-serif;
+}
+body{
+	background-color: var(--back-color);
+	color: var(--font-color);
+}
+.card{
+	width: 35%;
+	margin: 2em auto 0px;
+	padding: var(--padding-top) var(--padding-left) var(--padding-bottom);
+	background: linear-gradient(#9595f0, #5757eb);
+	border-radius: 2em;
+}
+.card > * + * ,
+.main > div + div,
+.options__block > * + *,
+.main__questions > * + *{
+	margin-top: 1.5em
+}
+/*.main__questions{
+	display: none;
+}*/
+.header__title{
+	font-size: 2rem;
+	padding-bottom: .3em;
+	border-bottom: 1px solid var(--font-color);
+}
+.main__title,
+.question__text{
+	font-size: 1.5rem;
+}
+.submit_block{
+	text-align: center;
+}
+.submit-btn{
+	background-color: var(--btn-back);
+	border-radius: .3em;
+	border: 0;
+	outline: 0;
+	padding: 1em 3em;
+	font-size: 1rem;
+	color: #fff;
+	cursor: pointer;
+}
+.submit-btn:hover{
+	background-color: #212121;
+	transition-timing-function: ease-in-out;
+	transition-property: background;
+	transition-duration: .3s;
+}
+
+.btn-option{
+	width: 100%;
+	background-color: transparent;
+	color: var(--font-color);
+	font-size: 1.2rem;
+	text-align: left;
+	border: 1px solid var(--font-color);
+	border-radius: .5em;
+	padding: var(--btn-padding-top) var(--btn-padding-left);
+}
+.btn-option:disabled{
+	cursor: no-drop;
+}
+.btn-option:hover:not([disabled]){
+	background-color: var(--btn-back);
+	border-color: var(--btn-back);
+	transition-property: background;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+	cursor: pointer;
+}
+.unselected_answer{
+	background-color: var(--option-right);
+	border-color: var(--option-right);
+}
+.correct-answer{
+	background-color: var(--option-right);
+	border-color: var(--option-right);
+}
+.wrong-answer{
+	background-color: var(--option-error);
+	border-color: var(--option-error);
+}
