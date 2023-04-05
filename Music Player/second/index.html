@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Music Player</title>
+    <script src="https://kit.fontawesome.com/db47d77514.js" crossorigin="anonymous"></script>
+    <!-- https://www.w3schools.com/css/css3_images.asp -->
+</head>
+<body>
+    <div class="card">
+        <div class="buttons-first">
+            <button class="btn__first">
+                <i class="fa-solid fa-angle-left" style="color: #f26fdf;"></i>
+            </button>
+            <button class="btn__second">
+                <i class="fa-solid fa-sliders" style="color: #f26fdf;"></i>
+            </button>
+        </div>
+        <div class="music-img-block">
+            <img src="../images/first.jpg" class="music-img" />
+        </div>
+        <div class="music-description">
+            <p class="music-name">Despacito</p>
+            <p class="music-author">Licu Fonsi Ft. Puetro Ther</p>
+        </div>
+        <input type="range" min="0" max="100" value="20" class="music-progress-bar">
+        <div class="control-buttons">
+            <button class="change-music">
+                <i class="fa-solid fa-angles-left" style="color: #f26fdf;"></i>
+            </button>
+            <button class="btn-play-pause">
+                <i class="fa-solid fa-play-pause" style="color: #fafafa;"></i>
+            </button>
+            <button class="change-music">
+                <i class="fa-solid fa-angles-right" style="color: #f26fdf;"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

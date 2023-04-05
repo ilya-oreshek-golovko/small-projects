@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Easy Tutorials</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" class="search__input" placeholder="Type country" spellcheck="false">
+            <button class="search__btn-submit"><img src="./images/search.png" alt=""></button>
+        </div>
+        <div class="error-body">
+            <p class="error_text">You have entered incorrect city name</p>
+        </div>
+        <div class="weather-info">
+            <img src="./images/rain.png" class="weather__img">
+            <div class="weather__temperature"></div>
+            <div class="weather__city"></div>
+            <div class="weather-add-info">
+                <div class="column">
+                    <img src="./images/humidity.png" class="col__img"/>
+                    <div class="column_desc">
+                        <p class="column_value humidity"></p>
+                        <p class="column_text">Humidity</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="./images/wind.png" class="col__img"/>
+                    <div class="column_desc">
+                        <p class="column_value wind"></p>
+                        <p class="column_text">Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>

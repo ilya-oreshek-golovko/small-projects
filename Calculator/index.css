@@ -1,10 +1,6 @@
 :root{
 	font-size: 16px;
 	box-sizing: border-box;
-	--input-number-color: ;
-	--operations-color: ;
-	--background: ;
-	--foreground: ;
 }
 *::before,
 *::after,
@@ -14,16 +10,94 @@
 	box-sizing: inherit;
 }
 body{
+	--input-number-color: #e6f0e7;
+	--operations-color: #63db6d;
+	--background: #bfddde;
+	--foreground: #515c54;
+	--default-radius: .3em;
+	--first-shadow: rgba(230, 240, 231, 0.1);
+	--second-shadow: rgba(5, 5, 5, 0.1);
 	font-family: "Gill Sans", sans-serif;
+	background-color: var(--background);
 }
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.card{
+	width: 40%;
+	background-color: var(--foreground);
+	border-radius: var(--default-radius);
+	padding: .5em 1em 1em;
+	margin: 5em auto 0px;
 }
+.input-block{
+	margin: 1em 0px;
+}
+.input-field{
+	width: 100%;
+	background-color: transparent;
+	border: 0;
+	text-align: right;
+	color: var(--input-number-color);
+	font-size: 1.3rem;
+}
+.input-field:focus{
+	border: 0;
+	outline: 0;
+}
+.row{
+	display: flex;
+	flex-direction: row;
+	gap: .5em;
+	justify-content: space-between;
+}
+/* .buttons-block > *:not(:last-child){
+	margin-bottom: .5em;
+} */
+.buttons-block > * + *{
+	margin-top: .5em;
+}
+.btn{
+	flex: 1;
+	padding: .6em 0px;
+	border-radius: var(--default-radius);
+	text-align: center;
+	outline: 0;
+	border: 0;
+	background-color: var(--foreground);
+	box-shadow: -3px -3px 5px 0px var(--first-shadow), 1px 1px 5px 0px var(--second-shadow);
+	/* transition: all ease 0.2s; */
+	cursor: pointer;
+	font-size: .6rem;
+}
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		transform: translateY(0);
+	}
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+	40%, 80% {
+		transform: translateY(-2px);
+	}
+}
+.btn:hover{
+	/* transform: translateY(2px); */
+	animation: bounce 1s;
+}
+.number{
+	color: var(--input-number-color);
+}
+.operation{
+	color: var(--operations-color);
+}
+.row:last-child .operation{
+	flex: 2;
+}
+.checkbox-block{
+	margin-top: 1em;
+	text-align: center;
+}
+.dark{
+	--background: #777a77;
+	--foreground: #bfddde;
+	--input-number-color: var(--background);
+	--operations-color: #354285;
+	--first-shadow: rgba(42, 44, 42, 0.1);
+	--second-shadow: rgba(17, 16, 16, 0.1);
 }
