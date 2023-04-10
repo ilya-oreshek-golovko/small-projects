@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./goblin-site.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/db47d77514.js" crossorigin="anonymous"></script>
+    <title>Responsive Gamin Website</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">coc-stats</a>
+
+        <ul class="navlsit">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Clans</a></li>
+            <li><a href="#">Town hall</a></li>
+            <li><a href="#">Troops</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+        <img src="./menu.png" alt="" id="menu-icon">
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h5>#3 Tranding</h5>
+            <h4>Lead Supercell</h4>
+            <h1>Goblins</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste culpa, sint nam aperiam ea.</p>
+            <a href="#">Compare</a>
+            <a href="#" class="ctaa"><img src="./plya.png" alt="play">Watch Gameplay</a>
+        </div>
+        <div class="hero-img">
+            <img src="./goblin-img.png" alt="goblin image">
+        </div>
+
+        <div class="icons">
+            <a href=""><img src="./instagram.png" alt="" /></a>
+            <a href=""><img src="./youtube.png" alt="" /></a>
+            <a href=""><img src="./ball.png" alt="" /></a>
+        </div>
+
+        <div class="scroll-down">
+            <a href=""><img src="./arrow-down.png" alt="" /></a>
+        </div>
+    </section>
+    <script>
+        const btnMenu = document.getElementById("menu-icon");
+        const navlsit = document.querySelector('.navlsit');
+
+        btnMenu.addEventListener("click", () => {
+            navlsit.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

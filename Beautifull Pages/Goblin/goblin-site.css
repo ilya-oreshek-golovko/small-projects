@@ -1,0 +1,253 @@
+:root{
+    font-size: 16px;
+}
+*::after,
+*::before,
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    height: 100%;
+    min-height: 100vh;
+}
+header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background-color: transparent;
+}
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.navlsit{
+    display: flex;
+}
+.navlsit a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 60px;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+}
+.navlsit a:hover{
+    border-bottom: 2px solid white;
+}
+#menu-icon{
+    color: white;
+    cursor: pointer;
+    font-size: 35px;
+    z-index: 1001;
+    display: none;
+}
+section{
+    padding: 0 19%;
+}
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.53%, #133917 75.52%);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2em;
+}
+.hero-text h5{
+    font-size: .9rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 40px;
+}
+.hero-text h4{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+.hero-text h1{
+    font-size: 5.5rem;
+    line-height: 1;
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    margin-bottom: 45px;
+}
+.hero-text p{
+    color: white;
+    font-size: .95rem;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+.hero-text a{
+    display: inline-block;
+    color: white;
+    background-color: #4d9559;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 400;
+    border-radius: 30px;
+    transition: all .55s ease;
+}
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(5px);
+}
+.hero-text .ctaa{
+    margin-left: 10px;
+    background-color: transparent;
+    border: 1px solid white;
+}
+.ctaa img{
+    width: 10px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.hero-img img{
+    width: 700px;
+    height: auto;
+}
+
+.icons{
+    position: absolute;
+    padding: 0px 9%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .55s ease-in-out;
+}
+.icons a,
+.scroll-down a{
+    display: block;
+}
+.icons > * + *{
+    margin-top: 10px;
+}
+.scroll-down{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    transition: all .55s ease-in-out;
+}
+.icons a:hover,
+.scroll-down a:hover{
+    transform: translateY(-3px);
+}
+@media(max-width: 1470px){
+    header{
+        padding: 25px 6%;
+    }
+    section{
+        padding: 0px 15%;
+    }
+    .scroll-down{
+        bottom: 2%;
+        right: 2%;
+    }
+    .hero-text h5{
+        margin-bottom: 20px;
+    }
+    .hero-text h4{
+        margin-bottom: 5px;
+    }
+}
+@media(max-width: 1380px){
+    header{
+        padding: 15px 3%;
+    }
+    section{
+        height: 100%;
+        padding: 0px 10%;
+    }
+    .scroll-down{
+        bottom: 2%;
+        right: 2%;
+    }
+    .hero-text h1{
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+    .hero-img img{
+        width: 100%;
+        height: auto;
+    }
+    .hero-text p{
+        margin-bottom: 20px;
+    }
+    .icons{
+        display: none;
+    }
+}
+@media(max-width: 1150px){
+    header{
+        padding: 10px 3%;
+    }
+    section{
+        padding: 0px 10%;
+    }
+    .scroll-down{
+        display: none;
+    }
+    .hero-img img{
+        width: 400px;
+        height: auto;
+    }
+    .hero-text{
+        padding-top: 140px;
+        text-align: center;
+    }
+    .hero-img{
+        text-align: center;
+    }
+    .hero{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+@media(max-width: 930px){
+    #menu-icon{
+        display: block;
+    }
+    .navlsit{
+        position: absolute;
+        right: -100%;
+        padding: 2em 5em;
+        background-color: rgba(19, 57, 23, 0.1);
+        top: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+    .navlsit li a{
+        margin-left: 0px;
+    }
+    .navlsit > li + li{
+        margin-top: 10px;
+    }
+    .navlsit.open{
+        right: 3%;
+    }
+}
+@media(max-width: 700px){
+    .navlsit{
+        background-color: rgba(19, 57, 23, 1);
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+}
