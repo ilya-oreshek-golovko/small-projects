@@ -1,0 +1,144 @@
+:root{
+	font-size: 16px;
+	--animation-timing-func: 200ms ease-in-out;
+	--bars-width: 50px;
+	--bars-height: 8px;
+	--bars-gap: 5px;
+	--animation-timing-func: 200ms ease-in-out;
+	--hamburger-height: calc(var(--bars-height) * 3 + var(--bars-gap) * 2);
+}
+*::before,
+*::after,
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	--text-color: white;
+	--text-hover: rgba(3, 102, 252, .85);
+}
+body,
+.header{
+	height: 100vh;
+}
+.wrapper{
+	position: relative;
+}
+a{
+	color: var(--text-color);
+	text-decoration: none;
+}
+a:hover{
+	color: var(--text-hover);
+}
+.header{
+	background-image: url('https://4kwallpapers.com/images/wallpapers/valley-landscape-aesthetic-mountains-gradient-background-3840x2160-4589.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.navbar{
+	position: absolute;
+	width: 100%;
+	padding: 1em 3.5em;
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+.navbar__title{
+	font-size: 2rem;
+	text-transform: capitalize;
+}
+.menu{
+	margin-left: auto;
+	transition: margin-left 500ms ease;
+}
+.menu__dropdown{
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+}
+.menu__dropdown > * + *{
+	margin-left: 2em;
+}
+
+.hamburger-menu{
+	--x-width: calc(var(--hamburger-height) * 1.41421356237);
+	display: none;
+	flex-direction: column;
+	gap: var(--bars-gap);
+
+	position: absolute;
+	z-index: 2;
+	top: 30%;
+	right: 5%;
+}
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu .input{
+	content: "";
+	cursor: pointer;
+	height: var(--bars-height);
+	width: var(--bars-width);
+	border-radius: 10em;
+	background-color: var(--text-color);
+	transform-origin: left center;
+}
+.hamburger-menu::before:hover,
+.hamburger-menu::after:hover,
+.hamburger-menu .input:hover{
+	color: black;
+}
+.hamburger-menu .input{
+	appearance: none;
+	border: 0;
+	outline: 0;
+	pointer-events: none;
+	transition: opacity var(--animation-timing-func), width var(--animation-timing-func);
+}
+.hamburger-menu:has(.input:checked)::before{
+	width: var(--x-width);
+	rotate: 45deg;
+	translate: 0 calc(var(--bars-height) / -2);
+}
+.hamburger-menu:has(.input:checked)::after{
+	width: var(--x-width);
+	rotate: -45deg;
+	translate: 0 calc(var(--bars-height) / 2);
+}
+.hamburger-menu .input:checked{
+	opacity: 0;
+	width: 0;
+}
+
+@media(max-width: 640px){
+	.menu{
+		margin-left: -1000px;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: rgba(255, 255, 255, 0.5);
+/*		background-filter: blur(15px);*/
+	}
+	.hamburger-menu{
+		display: flex;
+	}
+	.hamburger-menu:has(.input:checked) + .menu{
+		margin-left: 0px;
+		height: 100vh;
+		width: 100vw;
+	}
+	.menu__dropdown{
+		font-size: 1.3rem;
+		height: 100vh;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.menu__dropdown > * + *{
+		margin-left: 0px;
+		margin-top: 2em;
+	}
+}
