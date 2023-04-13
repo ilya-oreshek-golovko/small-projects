@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+h1, h2, h3{
+	font-size: 1rem;
+	font-weight: 400;
+}
+body{
+	min-height: 100vh;
+	width: 100%;
+	height: 100%;
+	font-family: 'Roboto Condensed', sans-serif;
+	background: linear-gradient(#1b1d29 0%, #1831c9 40%);
+	overflow-x: hidden;
+}
+.nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 1em 15%;
+	background: transparent;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+}
+.nav .title{
+	color: white;
+	font-size: 2rem;
+	font-weight: 600;
+}
+.nav ul{
+	list-style-type: none;
+	display: flex;
+	transition: all .55s ease-in-out;
+}
+.nav ul > li + li{
+	margin-left: 1em;
+}
+.nav ul a{
+	color: white;
+	text-decoration: none;
+	font-weight: 400;
+	border: none;
+	padding: 8px 15px;
+	border-radius: 20px;
+	transition: background .25s linear;
+}
+.nav ul a:hover,
+.nav ul a.active{
+	background: rgba(105, 199, 240, .85);
+}
+.nav .btn-menu{
+	position: absolute;
+	top: 35%;
+	right: 4%;
+	display: none;
+}
+@media(max-width: 900px){
+	.nav .btn-menu{
+		display: inline-block;
+	}
+	.nav ul{
+		position: absolute;
+		flex-direction: column;
+		background: rgba(27, 29, 41, 0.3);
+		backdrop-filter: 15px;
+		border: 1px solid white;
+		border-radius: 5px;
+		padding: 2em 3em;
+		top: 85%;
+		right: -100%;
+	}
+	.nav ul > li + li{
+		margin-left: 0px;
+		margin-top: 1em;
+	}
+	.nav ul.active{
+		display: inline-block;
+		right: 4%;
+	}
+}
+
+.section-images{
+	position: relative;
+	z-index: 1;
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.section-images img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.section-text{
+	position: relative;
+	z-index: 2;
+	padding: 1em 15%;
+	background: #25214d;
+	color: white;
+}
+.section-text .title{
+	line-height: 2.5;
+	font-size: 3rem;
+	font-weight: 700;
+}
+.section-text .second-title{
+	line-height: 1.5;
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: .3em;
+}
+.section-text .content p{
+	font-size: 1.2rem;
+}
+.section-text .content > * + *{
+	margin-top: 2em;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Parallax Scrolling</title>
+	<link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+	<nav class="nav">
+		<h2 class="title">
+			Logo
+		</h2>
+		<ul id="menu">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Places</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+		<img src="./images/menu.png" alt="menu" class="btn-menu">
+	</nav>
+	
+	<section class="section-images">
+		<img src="./images/stars.png" id="stars" />
+		<img src="./images/burjkhalifa.png" id="burjkhalifa" />
+		<img src="./images/building.png" />
+		<img src="./images/dubaitext.png" id="dubaitext" />
+	</section>
+
+	<section class="section-text">
+		<h2 class="title">Dubai - United Arab Emirates</h2>
+		<p class="second-title">Parallax Scrolling Website</p>
+		<div class="content">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur quaerat expedita dignissimos, quam ea nisi minima. Sapiente odio officiis numquam tempore voluptatibus, beatae totam placeat, nesciunt est esse fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur quaerat expedita dignissimos, quam ea nisi minima. Sapiente odio officiis numquam tempore voluptatibus, beatae totam placeat, nesciunt est esse fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur quaerat expedita dignissimos, quam ea nisi minima. Sapiente odio officiis numquam tempore voluptatibus, beatae totam placeat, nesciunt est esse fuga.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur quaerat expedita dignissimos, quam ea nisi minima. Sapiente odio officiis numquam tempore voluptatibus, beatae totam placeat, nesciunt est esse fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur quaerat expedita dignissimos, quam ea nisi minima. Sapiente odio officiis numquam tempore voluptatibus, beatae totam placeat, nesciunt est esse fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur quaerat expedita dignissimos, quam ea nisi minima. Sapiente odio officiis numquam tempore voluptatibus, beatae totam placeat, nesciunt est esse fuga.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur quaerat expedita dignissimos, quam ea nisi minima. Sapiente odio officiis numquam tempore voluptatibus, beatae totam placeat, nesciunt est esse fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur quaerat expedita dignissimos, quam ea nisi minima. Sapiente odio officiis numquam tempore voluptatibus, beatae totam placeat, nesciunt est esse fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur quaerat expedita dignissimos, quam ea nisi minima. Sapiente odio officiis numquam tempore voluptatibus, beatae totam placeat, nesciunt est esse fuga.</p>		
+		</div>
+
+	</section>
+	<script>
+		(function(){
+			const stars = document.getElementById("stars");
+			const burjkhalifa = document.getElementById("burjkhalifa");
+			const dubaitext = document.getElementById("dubaitext");
+			const btnMenu = document.querySelector(".btn-menu");
+			const menu = document.getElementById("menu");
+
+			btnMenu.addEventListener("click", ()=> {
+				console.log(1111);
+				menu.classList.toggle("active");
+			});
+			window.addEventListener("scroll", () => {
+				const value = window.scrollY;
+
+				dubaitext.style.left = value * -2 + "px";
+				burjkhalifa.style.top = value * 1 + "px";
+				stars.style.top = value * 1 + "px";
+			});
+		}())
+	</script>
+</body>
+</html>

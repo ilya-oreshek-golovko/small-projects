@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+h1, h2, h3{
+	font-size: 1rem;
+	font-weight: 400;
+}
+body{
+	min-height: 100vh;
+	height: 100%;
+	width: 100%;
+	font-family: 'Roboto Condensed', sans-serif;
+	overflow-x: hidden;
+}
+.nav{
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	padding: 1em 15%;
+	z-index: 100;
+}
+.nav .title{
+	color: white;
+	font-size: 1.8rem;
+	line-height: 1.5;
+	font-weight: 600;
+}
+.nav .menu{
+	list-style-type: none;
+	display: flex;
+	gap: 1.5em;
+}
+/*.nav .menu li{
+	border: 1px solid transparent;
+	transition: border-bottom .55s ease-in-out;
+}*/
+/*.nav .menu > li + li{
+	margin-left: 1.5em;
+}*/
+.menu a{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	color: white;
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: 300;
+	padding: .5em .8em;
+	border: none;
+	outline: 0;
+/*	border-radius: 20px;*/
+	transition: color 300ms ease-in-out;
+}
+.menu a span{
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border-radius: 20px;
+	background-color: white;
+	transform: scale(0.0);
+	transition: all .45s ease-in-out;
+}
+.menu a:hover{
+	color: black;
+}
+.menu a:hover span{
+	transform: scale(1.0);
+}
+
+/*.nav .menu a:hover{
+	color: black;
+	background-color: white;
+	transform: scale(1.05);
+}*/
+
+.btn-menu{
+	display: none;
+	cursor: pointer;
+}
+.section-images{
+	position: relative;
+	z-index: 1;
+	min-height: 100vh;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url('./images/background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+.image-title{
+	font-size: 7rem;
+	font-weight: 700;
+	color: rgba(41, 53, 61, 0.85);
+	text-shadow: 0px 5px 10px white;
+	position: absolute;
+	z-index: 1;
+	cursor: pointer;
+}
+.image-title:hover{
+	z-index: 3;
+}
+.section-images img{
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	pointer-events: none;
+}
+.section-images #grass,
+.section-images #gate-left,
+.section-images #gate-right{
+	bottom: 0;
+}
+.section-images #tree-left,
+.section-images #tree-right{
+	top: 0;
+}
+
+.gate-left{
+	transform: translateX(-20%);
+}
+.gate-right{
+	transform: translateX(20%);	
+}
+.section-text{
+	position: relative;
+	z-index: 2;
+	background-color: #020912;
+	padding: 1em 15%;
+	color: white;
+}
+.section-text .title{
+	font-size: 2.5rem;
+	line-height: 3;
+	font-weight: 700;
+}
+.section-text .text-content p{
+	letter-spacing: normal;
+	word-spacing: .3rem;
+	line-height: 1.5;
+}
+.section-text .text-content > p + p{
+	margin-top: 1.5em;
+}
+@media(max-width: 1300px){
+	.image-title{
+		font-size: 5rem;
+	}	
+}
+@media(max-width: 700px){
+	.btn-menu{
+		display: block;
+	}
+	.menu{
+		top: -500px;
+		right: 15%;
+		flex-direction: column;
+		position: absolute;
+		padding: 1em;
+		width: 250px;
+		background: rgba(0, 0, 0, 0.2);
+		backdrop-filter: 20px;
+		border-radius: 10px;
+		border: 1px solid white;
+		box-shadow: -2px 8px 8px 0px white, 2px -8px 8px 0px white;
+		transition: top .55s ease-in-out;
+		text-align: center;
+	}
+	.menu.active{
+		top: 60px;
+	}
+	/*.nav .menu a:hover{
+		color: white;
+		background-color: transparent;
+		transform: scale(1.05);
+	}
+	.nav .menu li:hover{
+		border-bottom: 1px solid white;
+	}*/
+}
+/*https://freefrontend.com/css-border-animations/*/
